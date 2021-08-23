@@ -4,7 +4,18 @@
   padding: 6.4rem 0;
   background-color: $neutral-200;
 
+  &::before {
+    @include psuedo;
+    top: 0;
+    left: 0;
+    width: 52.8rem;
+    height: 23.1rem;
+    @include background-image("../images/desktop/bg-pattern-footer-desktop.svg");
+  }
+
   &__container {
+    position: relative;
+    z-index: 1;
     max-width: 115.8rem;
     @include center-block;
     padding: 0 2.4rem;
@@ -91,6 +102,12 @@
 
   @include breakpoint-down(medium) {
     padding: 8.8rem 0;
+
+    &::before {
+      width: 37.4rem;
+      height: 17.3rem;
+      @include background-image("../images/mobile/bg-pattern-footer-mobile.svg");
+    }
 
     &__social-row {
       flex-direction: column;
