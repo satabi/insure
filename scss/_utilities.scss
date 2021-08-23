@@ -1,0 +1,81 @@
+.button {
+  display: block;
+  width: 100%;
+
+  &--dark {
+    width: 14.6rem;
+    color: $neutral-700;
+    background: transparent;
+    border: 2px solid $neutral-700;
+
+    &:hover,
+    &:focus {
+      color: $neutral-50;
+      background: $neutral-700;
+    }
+  }
+
+  &--modal {
+    margin-top: 3.2rem;
+    max-width: 32.7rem;
+    opacity: 0;
+    transition: all 0.4s ease;
+    transition-delay: 600ms;
+  }
+
+  &--hero {
+    width: 14.6rem;
+  }
+
+  &--banner {
+    position: relative;
+    width: 16rem;
+  }
+
+  &__link {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+
+    &--dark,
+    &--hero,
+    &--banner {
+      padding: 0.85rem 0;
+    }
+
+    &--modal,
+    &--hero,
+    &--banner {
+      color: $neutral-50;
+      background-color: transparent;
+      border: 2px solid $neutral-50;
+
+      &:hover,
+      &:focus {
+        color: $neutral-700;
+        background-color: $neutral-50;
+      }
+    }
+
+    &--modal {
+      padding: 1.8rem 0 1.5rem;
+      font-weight: 700;
+      @include letter-spacing(7);
+    }
+
+    &--hero {
+      @include letter-spacing(10);
+    }
+  }
+
+  @include breakpoint-down(medium) {
+    &--hero {
+      @include center-block;
+    }
+
+    &--modal {
+      @include center-block;
+    }
+  }
+}
